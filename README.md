@@ -58,7 +58,7 @@ Errors are returned as JSON objects in the following format:\
     "success": False, \
     "error": 400, \
     "message": "bad request"\
-}
+}\
 The API will return three error types when requests fail:
 1. 400: Bad Request
 2. 404: Resource Not Found
