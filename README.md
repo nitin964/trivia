@@ -53,12 +53,12 @@ All tests are kept in that file and should be maintained as updates are made to 
 
 ## Error Handling
 
-Errors are returned as JSON objects in the following format:
-{
-    "success": False, 
-    "error": 400,
-    "message": "bad request"
-}
+Errors are returned as JSON objects in the following format:\
+{\
+    "success": False, \
+    "error": 400, \
+    "message": "bad request"\
+}\
 The API will return three error types when requests fail:
 1. 400: Bad Request
 2. 404: Resource Not Found
