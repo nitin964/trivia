@@ -7,9 +7,9 @@ Trivia is a virtual quiz game. This application can perform following functions:
 4. Search for questions based on a text query string which is case insensitive.
 5. Play the quiz game, randomizing either all questions or within a specific category.
 
-# Getting Started
+## Getting Started
 
-# Pre-requisites and Local Development
+## Pre-requisites and Local Development
 Developers using this project should already have Python3, pip and node installed on their local machines.
 
 
