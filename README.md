@@ -70,18 +70,18 @@ The API will return three error types when requests fail:
 1. Returns success value and categories with id and type.
 2. Sample: curl http://127.0.0.1:5000/categories
 
-Reponse
-{
+Reponse\
+{\
   "categories": {\
-    "1": "Science",
-    "2": "Art",
-    "3": "Geography",
-    "4": "History",
-    "5": "Entertainment",
-    "6": "Sports"
-  },
-  "success": true
-}
+    "1": "Science",\
+    "2": "Art",\
+    "3": "Geography",\
+    "4": "History",\
+    "5": "Entertainment",\
+    "6": "Sports"\
+  },\
+  "success": true\
+}\
 
 ## GET /questions
 
