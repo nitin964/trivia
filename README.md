@@ -72,7 +72,7 @@ The API will return three error types when requests fail:
 
 Reponse
 {
-  "categories": {
+  "categories": {\
     "1": "Science",
     "2": "Art",
     "3": "Geography",
