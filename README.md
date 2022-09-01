@@ -181,8 +181,8 @@ Response
 2. Sample: curl -X DELETE http://127.0.0.1:5000/questions/1
 
 Response
-{
-  "success": true
+{\
+  "success": true\
 }
 
 ## POST /add_questions
@@ -191,9 +191,9 @@ Response
 2. Sample: curl -X POST -H "Content-Type: application/json" -d "{""question"":""Heres a new question string"", ""answer"":""Heres a new answer string"", ""difficulty"":1, ""category"":3}" http://127.0.0.1:5000/add_questions
 
 Reponse
-{
-  "id": 15,
-  "success": true
+{\
+  "id": 15,\
+  "success": true\
 }
 
 ## POST /add_questions
@@ -201,61 +201,61 @@ Reponse
 2. Sample: curl -X POST -H "Content-Type: application/json" -d "{""searchTerm"":""what""}" http://127.0.0.1:5000/search_questions
 
 Response
-{
-  "currentCategory": null,
-  "questions": [
-    {
-      "answer": "Muhammad Ali",
-      "category": "4",
-      "difficulty": 1,
-      "id": 9,
-      "question": "What boxer's original name is Cassius Clay?"
-    },
-    {
-      "answer": "Tom Cruise",
-      "category": "5",
-      "difficulty": 4,
-      "id": 4,
-      "question": "What actor did author Anne Rice first denounce, then praise in the role of her beloved Lestat?"
-    },
-    {
-      "answer": "Edward Scissorhands",
-      "category": "5",
-      "difficulty": 3,
-      "id": 6,
-      "question": "What was the title of the 1990 fantasy directed by Tim Burton about a young man with multi-bladed appendages?"
-    },
-    {
-      "answer": "Lake Victoria",
-      "category": "3",
-      "difficulty": 2,
-      "id": 13,
-      "question": "What is the largest lake in Africa?"
-    },
-    {
-      "answer": "Mona Lisa",
-      "category": "2",
-      "difficulty": 3,
-      "id": 17,
-      "question": "La Giaconda is better known as what?"
-    },
-    {
-      "answer": "The Liver",
-      "category": "1",
-      "difficulty": 4,
-      "id": 20,
-      "question": "What is the heaviest organ in the human body?"
-    },
-    {
-      "answer": "Blood",
-      "category": "1",
-      "difficulty": 4,
-      "id": 22,
-      "question": "Hematology is a branch of medicine involving the study of what?"
-    }
-  ],
-  "success": true,
-  "totalQuestions": 7
+{\
+  "currentCategory": null,\
+  "questions": [\
+    {\
+      "answer": "Muhammad Ali",\
+      "category": "4",\
+      "difficulty": 1,\
+      "id": 9,\
+      "question": "What boxer's original name is Cassius Clay?"\
+    },\
+    {\
+      "answer": "Tom Cruise",\
+      "category": "5",\
+      "difficulty": 4,\
+      "id": 4,\
+      "question": "What actor did author Anne Rice first denounce, then praise in the role of her beloved Lestat?"\
+    },\
+    {\
+      "answer": "Edward Scissorhands",\
+      "category": "5",\
+      "difficulty": 3,\
+      "id": 6,\
+      "question": "What was the title of the 1990 fantasy directed by Tim Burton about a young man with multi-bladed appendages?"\
+    },\
+    {\
+      "answer": "Lake Victoria",\
+      "category": "3",\
+      "difficulty": 2,\
+      "id": 13,\
+      "question": "What is the largest lake in Africa?"\
+    },\
+    {\
+      "answer": "Mona Lisa",\
+      "category": "2",\
+      "difficulty": 3,\
+      "id": 17,\
+      "question": "La Giaconda is better known as what?"\
+    },\
+    {\
+      "answer": "The Liver",\
+      "category": "1",\
+      "difficulty": 4,\
+      "id": 20,\
+      "question": "What is the heaviest organ in the human body?"\
+    },\
+    {\
+      "answer": "Blood",\
+      "category": "1",\
+      "difficulty": 4,\
+      "id": 22,\
+      "question": "Hematology is a branch of medicine involving the study of what?"\
+    }\
+  ],\
+  "success": true,\
+  "totalQuestions": 7\
 }
 
 ## GET /categories/{category_id}/questions
@@ -264,194 +264,194 @@ Response
 2. Sample: curl http://127.0.0.1:5000/categories/1/questions
 
 Response
-{
-  "current_category": 1,
-  "questions": [
-    {
-      "answer": "The Liver",
-      "category": "1",
-      "difficulty": 4,
-      "id": 20,
-      "question": "What is the heaviest organ in the human body?"
-    },
-    {
-      "answer": "Alexander Fleming",
-      "category": "1",
-      "difficulty": 3,
-      "id": 21,
-      "question": "Who discovered penicillin?"
-    },
-    {
-      "answer": "Blood",
-      "category": "1",
-      "difficulty": 4,
-      "id": 22,
-      "question": "Hematology is a branch of medicine involving the study of what?"
-    },
-    {
-      "answer": "which",
-      "category": "1",
-      "difficulty": 1,
-      "id": 8,
-      "question": "this"
-    },
-    {
-      "answer": "which",
-      "category": "1",
-      "difficulty": 1,
-      "id": 25,
-      "question": "this"
-    },
-    {
-      "answer": "lates",
-      "category": "1",
-      "difficulty": 1,
-      "id": 28,
-      "question": "latest"
-    },
-    {
-      "answer": "which",
-      "category": "1",
-      "difficulty": 1,
-      "id": 29,
-      "question": "latest"
-    },
-    {
-      "answer": "insert answer",
-      "category": "1",
-      "difficulty": 1,
-      "id": 30,
-      "question": "insert question"
-    },
-    {
-      "answer": "insert answer",
-      "category": "1",
-      "difficulty": 1,
-      "id": 32,
-      "question": "insert question"
-    },
-    {
-      "answer": "insert answer",
-      "category": "1",
-      "difficulty": 1,
-      "id": 34,
-      "question": "insert question"
-    },
-    {
-      "answer": "insert answer",
-      "category": "1",
-      "difficulty": 1,
-      "id": 36,
-      "question": "insert question"
-    },
-    {
-      "answer": "insert answer",
-      "category": "1",
-      "difficulty": 1,
-      "id": 38,
-      "question": "insert question"
-    },
-    {
-      "answer": "insert answer",
-      "category": "1",
-      "difficulty": 1,
-      "id": 40,
-      "question": "insert question"
-    },
-    {
-      "answer": "insert answer",
-      "category": "1",
-      "difficulty": 1,
-      "id": 42,
-      "question": "insert question"
-    },
-    {
-      "answer": "insert answer",
-      "category": "1",
-      "difficulty": 1,
-      "id": 44,
-      "question": "insert question"
-    },
-    {
-      "answer": "insert answer",
-      "category": "1",
-      "difficulty": 1,
-      "id": 46,
-      "question": "insert question"
-    },
-    {
-      "answer": "insert answer",
-      "category": "1",
-      "difficulty": 1,
-      "id": 48,
-      "question": "insert question"
-    },
-    {
-      "answer": "insert answer",
-      "category": "1",
-      "difficulty": 1,
-      "id": 50,
-      "question": "insert question"
-    },
-    {
-      "answer": "insert answer",
-      "category": "1",
-      "difficulty": 1,
-      "id": 52,
-      "question": "insert question"
-    },
-    {
-      "answer": "insert answer",
-      "category": "1",
-      "difficulty": 1,
-      "id": 54,
-      "question": "insert question"
-    },
-    {
-      "answer": "insert answer",
-      "category": "1",
-      "difficulty": 1,
-      "id": 56,
-      "question": "insert question"
-    },
-    {
-      "answer": "insert answer",
-      "category": "1",
-      "difficulty": 1,
-      "id": 58,
-      "question": "insert question"
-    },
-    {
-      "answer": "insert answer",
-      "category": "1",
-      "difficulty": 1,
-      "id": 60,
-      "question": "insert question"
-    },
-    {
-      "answer": "insert answer",
-      "category": "1",
-      "difficulty": 1,
-      "id": 62,
-      "question": "insert question"
-    },
-    {
-      "answer": "insert answer",
-      "category": "1",
-      "difficulty": 1,
-      "id": 64,
-      "question": "insert question"
-    },
-    {
-      "answer": "insert answer",
-      "category": "1",
-      "difficulty": 1,
-      "id": 66,
-      "question": "insert question"
-    }
-  ],
-  "success": true,
-  "total_questions": 26
+{\
+  "current_category": 1,\
+  "questions": [\
+    {\
+      "answer": "The Liver",\
+      "category": "1",\
+      "difficulty": 4,\
+      "id": 20,\
+      "question": "What is the heaviest organ in the human body?"\
+    },\
+    {\
+      "answer": "Alexander Fleming",\
+      "category": "1",\
+      "difficulty": 3,\
+      "id": 21,\
+      "question": "Who discovered penicillin?"\
+    },\
+    {\
+      "answer": "Blood",\
+      "category": "1",\
+      "difficulty": 4,\
+      "id": 22,\
+      "question": "Hematology is a branch of medicine involving the study of what?"\
+    },\
+    {\
+      "answer": "which",\
+      "category": "1",\
+      "difficulty": 1,\
+      "id": 8,\
+      "question": "this"\
+    },\
+    {\
+      "answer": "which",\
+      "category": "1",\
+      "difficulty": 1,\
+      "id": 25,\
+      "question": "this"\
+    },\
+    {\
+      "answer": "lates",\
+      "category": "1",\
+      "difficulty": 1,\
+      "id": 28,\
+      "question": "latest"\
+    },\
+    {\
+      "answer": "which",\
+      "category": "1",\
+      "difficulty": 1,\
+      "id": 29,\
+      "question": "latest"\
+    },\
+    {\
+      "answer": "insert answer",\
+      "category": "1",\
+      "difficulty": 1,\
+      "id": 30,\
+      "question": "insert question"\
+    },\
+    {\
+      "answer": "insert answer",\
+      "category": "1",\
+      "difficulty": 1,\
+      "id": 32,\
+      "question": "insert question"\
+    },\
+    {\
+      "answer": "insert answer",\
+      "category": "1",\
+      "difficulty": 1,\
+      "id": 34,\
+      "question": "insert question"\
+    },\
+    {\
+      "answer": "insert answer",\
+      "category": "1",\
+      "difficulty": 1,\
+      "id": 36,\
+      "question": "insert question"\
+    },\
+    {\
+      "answer": "insert answer",\
+      "category": "1",\
+      "difficulty": 1,\
+      "id": 38,\
+      "question": "insert question"\
+    },\
+    {\
+      "answer": "insert answer",\
+      "category": "1",\
+      "difficulty": 1,\
+      "id": 40,\
+      "question": "insert question"\
+    },\
+    {\
+      "answer": "insert answer",\
+      "category": "1",\
+      "difficulty": 1,\
+      "id": 42,\
+      "question": "insert question"\
+    },\
+    {\
+      "answer": "insert answer",\
+      "category": "1",\
+      "difficulty": 1,\
+      "id": 44,\
+      "question": "insert question"\
+    },\
+    {\
+      "answer": "insert answer",\
+      "category": "1",\
+      "difficulty": 1,\
+      "id": 46,\
+      "question": "insert question"\
+    },\
+    {\
+      "answer": "insert answer",\
+      "category": "1",\
+      "difficulty": 1,\
+      "id": 48,\
+      "question": "insert question"\
+    },\
+    {\
+      "answer": "insert answer",\
+      "category": "1",\
+      "difficulty": 1,\
+      "id": 50,\
+      "question": "insert question"\
+    },\
+    {\
+      "answer": "insert answer",\
+      "category": "1",\
+      "difficulty": 1,\
+      "id": 52,\
+      "question": "insert question"\
+    },\
+    {\
+      "answer": "insert answer",\
+      "category": "1",\
+      "difficulty": 1,\
+      "id": 54,\
+      "question": "insert question"\
+    },\
+    {\
+      "answer": "insert answer",\
+      "category": "1",\
+      "difficulty": 1,\
+      "id": 56,\
+      "question": "insert question"\
+    },\
+    {\
+      "answer": "insert answer",\
+      "category": "1",\
+      "difficulty": 1,\
+      "id": 58,\
+      "question": "insert question"\
+    },\
+    {\
+      "answer": "insert answer",\
+      "category": "1",\
+      "difficulty": 1,\
+      "id": 60,\
+      "question": "insert question"\
+    },\
+    {\
+      "answer": "insert answer",\
+      "category": "1",\
+      "difficulty": 1,\
+      "id": 62,\
+      "question": "insert question"\
+    },\
+    {\
+      "answer": "insert answer",\
+      "category": "1",\
+      "difficulty": 1,\
+      "id": 64,\
+      "question": "insert question"\
+    },\
+    {\
+      "answer": "insert answer",\
+      "category": "1",\
+      "difficulty": 1,\
+      "id": 66,\
+      "question": "insert question"\
+    }\
+  ],\
+  "success": true,\
+  "total_questions": 26\
 }
 
 ## POST /quizzes
@@ -460,13 +460,13 @@ Response
 2. Sample: curl -X POST -H "Content-Type: application/json" -d "{""previous_questions"": [1,4,20,15], ""quiz_category"": {""type"": ""click"", ""id"": []}}" http://127.0.0.1:5000/quizzes
 
 Response
-{
-  "question": {
-    "answer": "Alexander Fleming",
-    "category": "1",
-    "difficulty": 3,
-    "id": 21,
-    "question": "Who discovered penicillin?"
-  },
-  "success": true
+{\
+  "question": {\
+    "answer": "Alexander Fleming",\
+    "category": "1",\
+    "difficulty": 3,\
+    "id": 21,\
+    "question": "Who discovered penicillin?"\
+  },\
+  "success": true\
 }
