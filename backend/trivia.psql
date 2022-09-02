@@ -103,7 +103,6 @@ def create_app(test_config=None):
         print("question_id" + str(question_id))
         try:
             question = Question.query.filter(Question.id == question_id).one_or_none()
-            print(question)
             question.delete()
             return jsonify({
                 'success': True
