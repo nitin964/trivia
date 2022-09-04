@@ -14,7 +14,7 @@ class TriviaTestCase(unittest.TestCase):
         """Define test variables and initialize app."""
         self.app = create_app()
         self.client = self.app.test_client
-        self.database_name = "trivia_test"
+        self.database_name = "trivia"
         self.database_path = "postgresql://postgres:admin@{}/{}".format('localhost:5432', self.database_name)
         setup_db(self.app, self.database_path)
 
@@ -45,15 +45,6 @@ class TriviaTestCase(unittest.TestCase):
         self.assertTrue(len(data["categories"]))
         self.assertEqual(data["currentCategory"], None)
 
-    def test_404_sent_requesting_beyond_valid_page(self):
-        print ("test_404_sent_requesting_beyond_valid_page")
-        res = self.client().get("/questions?page=1000", json={"rating": 1})
-        data = json.loads(res.data)
-        print ("res.status_code" + str(res.status_code))
-        self.assertEqual(res.status_code, 404)
-        self.assertEqual(data["success"], False)
-        self.assertEqual(data["message"], "resource not found")
-
     def test_get_categories(self):
         print ("test_get_categories")
         res = self.client().get("/categories")
@@ -64,15 +55,6 @@ class TriviaTestCase(unittest.TestCase):
         self.assertTrue(data["categories"])
         self.assertTrue(len(data["categories"]))
 
-    def test_404_get_category(self):
-        print ("test_404_get_category")
-        res = self.client().get("/categories")
-        data = json.loads(res.data)
-        print ("res.status_code" + str(res.status_code))
-        self.assertEqual(res.status_code, 404)
-        self.assertEqual(data["success"], False)
-        self.assertEqual(data["message"], "resource not found")
-    
     def test_delete_question(self):
         print ("test_delete_question")
         question = Question(question='test question', answer='test answer', difficulty=1, category=1)
@@ -119,15 +101,6 @@ class TriviaTestCase(unittest.TestCase):
         self.assertEqual(res.status_code, 200)
         self.assertEqual(data['success'], True)
         self.assertEqual(data['totalQuestions'], len(Question.query.filter(Question.question.ilike(f'%what%')).all()))
-    
-    def test_404_search_question(self):
-        print("test_404_search_question")
-        res = self.client().post(f'/search_questions', json={"searchTerm": "abcdefgeh"})
-        data = json.loads(res.data)
-        print ("res.status_code" + str(res.status_code))
-        self.assertEqual(res.status_code, 404)
-        self.assertEqual(data['success'], False)
-        self.assertEqual(data["message"], "resource not found")
 
     def test_category_questions(self):
         print ("test_category_questions")
