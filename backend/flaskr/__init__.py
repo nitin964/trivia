@@ -51,9 +51,6 @@ def create_app(test_config=None):
     def retrieve_categories():
         selection = Category.query.order_by(Category.id).all()
     
-        if len(selection) == 0:
-            abort(404)
-
         return jsonify(
             {
                 'success': True,
@@ -79,8 +76,6 @@ def create_app(test_config=None):
         selection = Question.query.order_by(Question.id).all()
         current_questions = paginate_questions(request, selection)
         categories = Category.query.order_by(Category.id).all()
-        if len(current_questions) == 0:
-            abort(404)
 
         return jsonify({
             'success': True,
@@ -127,15 +122,18 @@ def create_app(test_config=None):
         new_difficulty = body.get("difficulty", None)
         new_category = body.get("category", None)
 
-        if new_question is None:
+        if new_question in (None,''):
             abort(422)
-        if new_answer is None:
+        if new_answer in (None,''):
             abort(422)
-        if new_difficulty is None:
+        if new_difficulty in (None,''):
             abort(422)
-        if new_category is None:
+
+        cat = Category.query.filter(Category.id == new_category).one_or_none()
+
+        if cat is None:
             abort(422)
-        
+
         try:
             question = Question(question=new_question, answer=new_answer, category=new_category, difficulty=new_difficulty)
             question.insert()
@@ -161,8 +159,6 @@ def create_app(test_config=None):
         searchterm = body.get('searchTerm', None)
         if searchterm:
             results = Question.query.filter(Question.question.ilike(f'%{searchterm}%')).all()
-            if len(results)==0:
-                abort(404)
             return jsonify({
                 'success': True,
                 'questions': [question.format() for question in results],
@@ -251,4 +247,4 @@ def create_app(test_config=None):
         }), 422
 
     return app
-
+    
