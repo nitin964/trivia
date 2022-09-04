@@ -94,10 +94,8 @@ def create_app(test_config=None):
     """
     @app.route("/questions/<int:question_id>", methods=["DELETE"])
     def delete_question(question_id):
-        print("question_id" + str(question_id))
         try:
             question = Question.query.filter(Question.id == question_id).one_or_none()
-            print(question)
             question.delete()
             return jsonify({
                 'success': True
@@ -127,6 +125,8 @@ def create_app(test_config=None):
         if new_answer in (None,''):
             abort(422)
         if new_difficulty in (None,''):
+            abort(422)
+        if new_category in (None,''):
             abort(422)
 
         cat = Category.query.filter(Category.id == new_category).one_or_none()
@@ -178,7 +178,6 @@ def create_app(test_config=None):
         try:
             questions = Question.query.filter(Question.category == str(category_id)).all()
             
-            print(len(questions))
             if len(questions)==0:
                 abort(404) 
 
